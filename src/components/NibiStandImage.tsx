@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from '@mui/system';
-const NibiImagePath = './images/NibiStand.png'
+const NibiImagePath = './images/NibiStand_Trim.png'
 
 
 const ImageContainer = styled('div')({
@@ -10,13 +10,17 @@ const ImageContainer = styled('div')({
 });
 
 const MirroredImage = styled('img')({
+    maxWidth: '500px',      
+    maxHeight: '500px',
+    margin: 'auto',
+    padding: '10px',
     transform: 'scaleX(-1)',
 });
 
 export const NibiStandImage = () => {
     return (
         <ImageContainer>
-             <MirroredImage src={NibiImagePath}>
+            <MirroredImage src={NibiImagePath}>
             </MirroredImage>
         </ImageContainer>
     )

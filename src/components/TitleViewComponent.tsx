@@ -1,13 +1,25 @@
 
-import { Typography,Button} from '@mui/material';
-import {NibiStandImage} from './NibiStandImage.tsx';
+import { Typography, Button, styled, Container } from '@mui/material';
+import { NibiStandImage } from './NibiStandImage.tsx';
+import React from 'react';
 
-export const TitleViewComponent = () =>  {
+const ContainerFirst = styled('div')({
+  display: 'flex',
+  alignItems: 'center',  // コンテンツを垂直方向に中央揃え
+  gap: '10px',           // ボタンと画像の間に隙間を設ける
+});
+
+export const TitleViewComponent: React.FC = () => {
   return (
     <>
-      <Typography variant="h1">ニビネイター！</Typography>
-      <Button variant="contained" size="large">はじめる</Button>
-      <NibiStandImage></NibiStandImage>
+
+      <ContainerFirst>
+        <div>
+          <Typography variant="h3">ニビネイター！</Typography>
+          <Button variant="contained" size="large">はじめる</Button>
+        </div>
+        <NibiStandImage></NibiStandImage>
+      </ContainerFirst>
     </>
   )
 }
