@@ -1,5 +1,5 @@
 
-import { Typography, Button, styled, Container } from '@mui/material';
+import { Typography, Button, styled } from '@mui/material';
 import { NibiStandImage } from './NibiStandImage.tsx';
 import React from 'react';
 

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { styled } from '@mui/system';
 const NibiImagePath = './images/NibiStand_Trim.png'
 
