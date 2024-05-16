@@ -9,14 +9,19 @@ const ContainerFirst = styled('div')({
   gap: '10px',           // ボタンと画像の間に隙間を設ける
 });
 
-export const TitleViewComponent: React.FC = () => {
+interface TitleViewProps {
+  onButtonClick: () => void;
+}
+
+
+export const TitleViewComponent: React.FC<TitleViewProps> = ({onButtonClick}) => {
   return (
     <>
 
       <ContainerFirst>
         <div>
           <Typography variant="h3">ニビネイター！</Typography>
-          <Button variant="contained" size="large">はじめる</Button>
+          <Button variant="contained" size="large" onClick={onButtonClick}>はじめる</Button>
         </div>
         <NibiStandImage></NibiStandImage>
       </ContainerFirst>

@@ -1,5 +1,4 @@
 export type CharacterObject = {
-    id: number;
     name: string;
     answers: Record<string, boolean>
 }
@@ -45,51 +44,60 @@ export const QuestionDic: Record<string, string> = {
     "赤": "赤い服を着ていますか？",
     "二": "名前をカタカナで書くと二文字ですか？",
     "三": "名前をカタカナで書くと三文字ですか？",
-    "絵本": "『絵本のコッペ』に登場しますか？"
+    "絵本": "『絵本のコッペ』に登場しますか？",
+    "ロボミー": "『ロボットガール・ミーツ・ヒューマン！』に登場しますか？",
+    "踏切": "『踏切を待ちながら。』に登場しますか？",
+    "ロボット": "ロボットですか？",
+    "獣耳": "獣のような耳がついていますか？",
+    "マフラー": "マフラーやスカーフを首に巻いていますか？",
+    "白": "白い服を着ていますか？",
+    "名前一意": "明確な名前がゲーム中で明らかになっていますか？",
+    "帽子": "頭に何かをかぶっていますか？",
+    "魔法": "魔法が使えますか？",
+    "名前色": "名前が色に由来していますか？",
+    "タイトル": "キャラクター名がゲームのタイトルになっていますか？",
+    "浮遊": "オバケ、または幽霊ですか？",
+
 
 }
 
-export const StaticCharaList: CharacterObject[] = [
-    {
-        id: 1,
-        name: "コッペ",
-        answers: {
-            "赤": true,
-            "二": false,
-            "三": true,
-            "絵本": true,
-        }
-    },
-    {
-        id: 2,
-        name: "ノワ",
-        answers: {
-            "赤": false,
-            "二": true,
-            "三": false,
-            "絵本": true,
-        }
-    },
+// export const StaticCharaList: CharacterObject[] = [
+//     {
+//         name: "コッペ",
+//         answers: {
+//             "赤": true,
+//             "二": false,
+//             "三": true,
+//             "絵本": true,
+//         }
+//     },
+//     {
+//         name: "ノワ",
+//         answers: {
+//             "赤": false,
+//             "二": true,
+//             "三": false,
+//             "絵本": true,
+//         }
+//     },
 
-    {
-        id: 3,
-        name: "スカーレット",
-        answers: {
-            "赤": true,
-            "二": false,
-            "三": false,
-            "絵本": false,
-        }
-    },
-    {
-        id: 4,
-        name: "ニビ",
-        answers: {
-            "赤": false,
-            "二": true,
-            "三": false,
-            "絵本": false,
-        }
-    }
+//     {
+//         name: "スカーレット",
+//         answers: {
+//             "赤": true,
+//             "二": false,
+//             "三": false,
+//             "絵本": false,
+//         }
+//     },
+//     {
+//         name: "ニビ",
+//         answers: {
+//             "赤": false,
+//             "二": true,
+//             "三": false,
+//             "絵本": false,
+//         }
+//     }
 
-]
+// ]

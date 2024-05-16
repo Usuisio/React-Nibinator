@@ -1,14 +1,30 @@
 import { Button, Typography, styled } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import { CharacterObject, QuestionDic, StaticCharaList, chooseBestQuestion, } from './YesNoDataTable';
+import { CharacterObject, QuestionDic, chooseBestQuestion, } from './YesNoDataTable';
+import characterData from '../characterData.json';
+
+const StaticCharaList: CharacterObject[] = characterData;
 
 const QuestionViewContainer = styled('div')({
   display: 'flex',
   flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
   gap: '10px',
 });
 
-export const QuestionViewComponent: React.FC = () => {
+const StyledButton = styled(Button)`
+  variant:"outlined"; 
+  width:400px;
+`;
+
+
+interface QuestionViewProps {
+  onComplete(name:string): void;
+}
+
+
+export const QuestionViewComponent: React.FC<QuestionViewProps> = ({onComplete}) => {
   const [displayedQuestionKey, setDisplayedQuestionKey] = useState<string>('赤');
   const [tempCharaList, setTempCharaList] = useState<CharacterObject[]>(StaticCharaList);
 
@@ -29,7 +45,7 @@ export const QuestionViewComponent: React.FC = () => {
   useEffect(() => {
     const chara = tryGetLastOneChara();
     if (chara) {
-      setDisplayedQuestionKey((q: string) => q = chara.name);
+      onComplete(chara.name);
     }
     else {
       setDisplayedQuestionKey((q: string) => q = chooseBestQuestion(tempCharaList));
@@ -43,10 +59,10 @@ export const QuestionViewComponent: React.FC = () => {
   return (
     <QuestionViewContainer>
       <Typography > {QuestionDic[displayedQuestionKey]??displayedQuestionKey}</Typography>
-      <Button variant='outlined' onClick={onClickedYes}>はい</Button>
-      <Button variant='outlined' onClick={onClickedYes}>多分そう</Button>
-      <Button variant='outlined' onClick={onClickedNo}>多分違う</Button>
-      <Button variant='outlined' onClick={onClickedNo}>いいえ</Button>
+      <StyledButton variant='outlined' onClick={onClickedYes}>はい</StyledButton>
+      <StyledButton variant='outlined' onClick={onClickedYes}>多分そう</StyledButton>
+      <StyledButton variant='outlined' onClick={onClickedNo}>多分違う</StyledButton>
+      <StyledButton variant='outlined' onClick={onClickedNo}>いいえ</StyledButton>
 
     </QuestionViewContainer>
   )
