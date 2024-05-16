@@ -1,12 +1,9 @@
 
-import { Typography, Button, styled } from '@mui/material';
+import { Button, styled } from '@mui/material';
 import { NibiStandImage } from './NibiStandImage.tsx';
 import React from 'react';
 import { NamePicturePathPairs } from './CharaImageTable.ts';
 
-
-const p512 = './images/512.png'
-const p256 = './images/256.png'
 
 const ResiultViewContainer = styled('div')({
     display: 'flex',

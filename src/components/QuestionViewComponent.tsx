@@ -18,11 +18,9 @@ const StyledButton = styled(Button)`
   width:400px;
 `;
 
-
 interface QuestionViewProps {
   onComplete(name:string): void;
 }
-
 
 export const QuestionViewComponent: React.FC<QuestionViewProps> = ({onComplete}) => {
   const [displayedQuestionKey, setDisplayedQuestionKey] = useState<string>('赤');
@@ -48,7 +46,7 @@ export const QuestionViewComponent: React.FC<QuestionViewProps> = ({onComplete})
       onComplete(chara.name);
     }
     else {
-      setDisplayedQuestionKey((q: string) => q = chooseBestQuestion(tempCharaList));
+      setDisplayedQuestionKey(chooseBestQuestion(tempCharaList));
     }
   }, [tempCharaList]);
 

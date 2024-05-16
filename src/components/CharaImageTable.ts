@@ -11,6 +11,7 @@ interface NameValueDictionary {
     "シキ": "./images/シキ.png",
     "スイスイ（ノワのレストラン！）": "./images/スイスイ.png",
     "スカーレット": "./images/スカーレット.png",
+    "トルテ": "./images/トルテ.png",
     "ナツラ": "./images/ナツラ.png",
     "ニビ": "./images/ニビ.png",
     "ノワ": "./images/ノワ.png",
